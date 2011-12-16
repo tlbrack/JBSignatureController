@@ -81,7 +81,7 @@ foreColor = foreColor_;
 	// Set drawing params
 	CGContextSetLineWidth(context, self.lineWidth);
 	CGContextSetStrokeColorWithColor(context, [self.foreColor CGColor]);
-	CGContextSetLineCap(context, kCGLineCapRound);
+	CGContextSetLineCap(context, kCGLineCapButt);
 	CGContextSetLineJoin(context, kCGLineJoinRound);
 	CGContextBeginPath(context);
 	
@@ -171,8 +171,8 @@ foreColor = foreColor_;
 	
 	// Only keep the point if it's > 5 points from the last
 	if (CGPointEqualToPoint(CGPointZero, lastTapPoint_) || 
-		fabs(touchLocation.x - lastTapPoint_.x) > 5.0f ||
-		fabs(touchLocation.y - lastTapPoint_.y) > 5.0f) {
+		fabs(touchLocation.x - lastTapPoint_.x) > 2.0f ||
+		fabs(touchLocation.y - lastTapPoint_.y) > 2.0f) {
 		
 		[self.handwritingCoords addObject:NSStringFromCGPoint(touchLocation)];
 		[self setNeedsDisplay];
