@@ -33,9 +33,9 @@
 
 @interface JBSignatureView ()
 
-@property(nonatomic,retain) NSMutableArray *handwritingCoords;
+@property(nonatomic,retain) NSMutableArray *lines;
 
--(void)processPoint:(CGPoint)touchLocation;
+-(void)addPoint:(CGPoint)touchLocation toLine:(NSMutableArray*)line;
 
 @end
 
@@ -44,7 +44,7 @@
 @implementation JBSignatureView
 
 @synthesize 
-handwritingCoords = handwritingCoords_,
+lines = lines_,
 lineWidth = lineWidth_,
 signatureImageMargin = signatureImageMargin_,
 shouldCropSignatureImage = shouldCropSignatureImage_,
@@ -60,7 +60,7 @@ foreColor = foreColor_;
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-		self.handwritingCoords = [[NSMutableArray alloc] init];
+        self.lines = [[NSMutableArray alloc] init];
 		self.lineWidth = 2.0f;
 		self.signatureImageMargin = 10.0f;
 		self.shouldCropSignatureImage = YES;
@@ -73,7 +73,7 @@ foreColor = foreColor_;
 
 - (void)dealloc {
     [foreColor_ release];
-    [handwritingCoords_ release];
+    [lines_ release];
     [super dealloc];
 }
 
@@ -103,31 +103,27 @@ foreColor = foreColor_;
 	
 	// Loop through the strings in the array
 	// which are just serialized CGPoints
-	for (NSString *touchString in self.handwritingCoords) {
-		
-		// Unserialize
-		CGPoint tapLocation = CGPointFromString(touchString);
-		
-		// If we have a CGPointZero, that means the next
-		// iteration of this loop will represent the first
-		// point after a user has lifted their finger.
-		if (CGPointEqualToPoint(tapLocation, CGPointZero)) {
-			isFirstPoint = YES;
-			continue;
-		}
-		
-		// If first point, move to it and continue. Otherwize, draw a line from
-		// the last point to this one.
-		if (isFirstPoint) {
-			CGContextMoveToPoint(context, tapLocation.x, tapLocation.y);
-			isFirstPoint = NO;
-		} else {
-			CGPoint startPoint = CGContextGetPathCurrentPoint(context);
-			CGContextAddQuadCurveToPoint(context, startPoint.x, startPoint.y, tapLocation.x, tapLocation.y);
-			CGContextAddLineToPoint(context, tapLocation.x, tapLocation.y);
-		}
-		
-	}	
+    for (NSMutableArray *line in self.lines) {
+        
+        isFirstPoint = YES;
+        for (NSString *touchString in line) {
+            
+            // Unserialize
+            CGPoint tapLocation = CGPointFromString(touchString);
+            
+            // If first point, move to it and continue. Otherwize, draw a line from
+            // the last point to this one.
+            if (isFirstPoint) {
+                CGContextMoveToPoint(context, tapLocation.x, tapLocation.y);
+                isFirstPoint = NO;
+            } else {
+                CGPoint startPoint = CGContextGetPathCurrentPoint(context);
+                CGContextAddQuadCurveToPoint(context, startPoint.x, startPoint.y, tapLocation.x, tapLocation.y);
+                CGContextAddLineToPoint(context, tapLocation.x, tapLocation.y);
+            }
+            
+        }	
+    }
 	
 	CGContextStrokePath(context);
 }
@@ -137,7 +133,16 @@ foreColor = foreColor_;
 /**
  * Not implemented.
  **/
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	UITouch *touch = [touches anyObject];
+	CGPoint touchLocation = [touch locationInView:self];    
+    
+    // add a new line
+    NSMutableArray *newLine = [[[NSMutableArray alloc] init] autorelease];
+    [lines_ addObject:newLine];
+    
+    [self addPoint:touchLocation toLine:newLine];
+}
 
 /**
  * This method adds the touch to our array.
@@ -147,8 +152,7 @@ foreColor = foreColor_;
 	UITouch *touch = [touches anyObject];
 	CGPoint touchLocation = [touch locationInView:self];
 	
-	[self processPoint:touchLocation];
-	
+    [self addPoint:touchLocation toLine:[lines_ lastObject]];
 }
 
 /**
@@ -156,37 +160,38 @@ foreColor = foreColor_;
  * lifted.
  **/
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	[self.handwritingCoords addObject:NSStringFromCGPoint(CGPointZero)];	
+ 
+    // support points
+    if ([[lines_ lastObject] count] == 1) {
+        [self addPoint:CGPointMake(lastTapPoint_.x + 1.0, lastTapPoint_.y - 1.0) 
+                toLine:[lines_ lastObject]];
+    }
 }
 
 /**
  * Touches Cancelled.
  **/
 -(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-	[self.handwritingCoords addObject:NSStringFromCGPoint(CGPointZero)];
+
 }
 
 
 #pragma mark - Private Methods
 
 /**
- * Processes the point received from touch events
- **/
--(void)processPoint:(CGPoint)touchLocation {
-	
-	// Only keep the point if it's > 5 points from the last
-	if (CGPointEqualToPoint(CGPointZero, lastTapPoint_) || 
+ * Add a point to the line
+ */
+-(void)addPoint:(CGPoint)touchLocation toLine:(NSMutableArray*)line {
+    // keep a point if it is the start of a line or a bit away from the last
+    if (line.count < 2 ||
 		fabs(touchLocation.x - lastTapPoint_.x) > 2.0f ||
 		fabs(touchLocation.y - lastTapPoint_.y) > 2.0f) {
 		
-		[self.handwritingCoords addObject:NSStringFromCGPoint(touchLocation)];
+		[line addObject:NSStringFromCGPoint(touchLocation)];
 		[self setNeedsDisplay];
 		lastTapPoint_ = touchLocation;
-		
-	}
-	
+    }
 }
-
 
 #pragma mark - Public Methods
 
@@ -213,7 +218,8 @@ foreColor = foreColor_;
 	float minX = 99999999.0f, minY = 999999999.0f, maxX = 0.0f, maxY = 0.0f;
 	
 	// Loop through current coordinates to get the crop bounds
-	for (NSString *touchString in self.handwritingCoords) {
+    for (NSMutableArray *line in lines_) {
+      for (NSString *touchString in line) {
 		
 		// Unserialize
 		CGPoint tapLocation = CGPointFromString(touchString);
@@ -228,7 +234,7 @@ foreColor = foreColor_;
 		if (tapLocation.x > maxX) maxX = tapLocation.x;
 		if (tapLocation.y < minY) minY = tapLocation.y;
 		if (tapLocation.y > maxY) maxY = tapLocation.y;
-		
+      }	
 	}
 	
 	// Crop to the bounds (include a margin)
@@ -251,7 +257,7 @@ foreColor = foreColor_;
  * Clears any drawn signature from the screen
  **/
 -(void)clearSignature {
-	[self.handwritingCoords removeAllObjects];
+	[self.lines removeAllObjects];
 	[self setNeedsDisplay];
 }
 

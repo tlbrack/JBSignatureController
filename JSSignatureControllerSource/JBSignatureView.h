@@ -31,6 +31,7 @@
 
 @interface JBSignatureView : UIView {
     NSMutableArray *handwritingCoords_;
+    NSMutableArray *lines_;
     UIImage *currentSignatureImage_;
 	float lineWidth_;
 	float signatureImageMargin_;
