@@ -26,7 +26,6 @@
 //  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 // TODO: support dots
-// TODO: improve width of lines -- quite blocky as is
 
 #import <UIKit/UIKit.h>
 
