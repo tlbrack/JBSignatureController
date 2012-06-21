@@ -6,7 +6,7 @@ Features
 * Returns a UIImage of the signature, optionally cropped and centered to fit
 * Example shows how to save signature to a PNG file
 * Code is well-documented allowing for easy customization
-* Uses ARC
+* Uses traditional retain/release counting
 * Free!
 
 

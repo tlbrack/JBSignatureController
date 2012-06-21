@@ -1,0 +1,341 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7844978E1592860B00F2E004 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7844978D1592860B00F2E004 /* UIKit.framework */; };
+		784497901592860B00F2E004 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7844978F1592860B00F2E004 /* Foundation.framework */; };
+		784497921592860B00F2E004 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784497911592860B00F2E004 /* CoreGraphics.framework */; };
+		784497981592860B00F2E004 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 784497961592860B00F2E004 /* InfoPlist.strings */; };
+		7844979B1592860B00F2E004 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7844979A1592860B00F2E004 /* main.m */; };
+		7844979E1592860B00F2E004 /* JBSignatureControllerExampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7844979D1592860B00F2E004 /* JBSignatureControllerExampleAppDelegate.m */; };
+		784497A21592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 784497A11592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPhone.m */; };
+		784497A51592860B00F2E004 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784497A31592860B00F2E004 /* MainWindow_iPhone.xib */; };
+		784497A91592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 784497A81592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPad.m */; };
+		784497AC1592860B00F2E004 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784497AA1592860B00F2E004 /* MainWindow_iPad.xib */; };
+		784497BA15936FCD00F2E004 /* JBSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784497B215936FCD00F2E004 /* JBSignatureView.m */; };
+		784497BB15936FCD00F2E004 /* JBSignatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784497B415936FCD00F2E004 /* JBSignatureController.m */; };
+		784497BC15936FCD00F2E004 /* bg-signature-portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 784497B615936FCD00F2E004 /* bg-signature-portrait@2x.png */; };
+		784497BD15936FCD00F2E004 /* bg-signature-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 784497B715936FCD00F2E004 /* bg-signature-portrait.png */; };
+		784497BE15936FCD00F2E004 /* bg-signature-landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 784497B815936FCD00F2E004 /* bg-signature-landscape@2x.png */; };
+		784497BF15936FCD00F2E004 /* bg-signature-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 784497B915936FCD00F2E004 /* bg-signature-landscape.png */; };
+		784497C215936FDA00F2E004 /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = 784497C015936FDA00F2E004 /* NSFileManager+DirectoryLocations.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		784497891592860B00F2E004 /* JBSignatureControllerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JBSignatureControllerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7844978D1592860B00F2E004 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7844978F1592860B00F2E004 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		784497911592860B00F2E004 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		784497951592860B00F2E004 /* JBSignatureControllerExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JBSignatureControllerExample-Info.plist"; sourceTree = "<group>"; };
+		784497971592860B00F2E004 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		784497991592860B00F2E004 /* JBSignatureControllerExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JBSignatureControllerExample-Prefix.pch"; sourceTree = "<group>"; };
+		7844979A1592860B00F2E004 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7844979C1592860B00F2E004 /* JBSignatureControllerExampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBSignatureControllerExampleAppDelegate.h; sourceTree = "<group>"; };
+		7844979D1592860B00F2E004 /* JBSignatureControllerExampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBSignatureControllerExampleAppDelegate.m; sourceTree = "<group>"; };
+		784497A01592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JBSignatureControllerExampleAppDelegate_iPhone.h; path = iPhone/JBSignatureControllerExampleAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		784497A11592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JBSignatureControllerExampleAppDelegate_iPhone.m; path = iPhone/JBSignatureControllerExampleAppDelegate_iPhone.m; sourceTree = "<group>"; };
+		784497A41592860B00F2E004 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		784497A71592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JBSignatureControllerExampleAppDelegate_iPad.h; path = iPad/JBSignatureControllerExampleAppDelegate_iPad.h; sourceTree = "<group>"; };
+		784497A81592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JBSignatureControllerExampleAppDelegate_iPad.m; path = iPad/JBSignatureControllerExampleAppDelegate_iPad.m; sourceTree = "<group>"; };
+		784497AB1592860B00F2E004 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+		784497B215936FCD00F2E004 /* JBSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBSignatureView.m; path = ../../JSSignatureControllerSource/JBSignatureView.m; sourceTree = "<group>"; };
+		784497B315936FCD00F2E004 /* JBSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBSignatureView.h; path = ../../JSSignatureControllerSource/JBSignatureView.h; sourceTree = "<group>"; };
+		784497B415936FCD00F2E004 /* JBSignatureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JBSignatureController.m; path = ../../JSSignatureControllerSource/JBSignatureController.m; sourceTree = "<group>"; };
+		784497B515936FCD00F2E004 /* JBSignatureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JBSignatureController.h; path = ../../JSSignatureControllerSource/JBSignatureController.h; sourceTree = "<group>"; };
+		784497B615936FCD00F2E004 /* bg-signature-portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-signature-portrait@2x.png"; path = "../../JSSignatureControllerSource/bg-signature-portrait@2x.png"; sourceTree = "<group>"; };
+		784497B715936FCD00F2E004 /* bg-signature-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-signature-portrait.png"; path = "../../JSSignatureControllerSource/bg-signature-portrait.png"; sourceTree = "<group>"; };
+		784497B815936FCD00F2E004 /* bg-signature-landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-signature-landscape@2x.png"; path = "../../JSSignatureControllerSource/bg-signature-landscape@2x.png"; sourceTree = "<group>"; };
+		784497B915936FCD00F2E004 /* bg-signature-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-signature-landscape.png"; path = "../../JSSignatureControllerSource/bg-signature-landscape.png"; sourceTree = "<group>"; };
+		784497C015936FDA00F2E004 /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
+		784497C115936FDA00F2E004 /* NSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		784497861592860B00F2E004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7844978E1592860B00F2E004 /* UIKit.framework in Frameworks */,
+				784497901592860B00F2E004 /* Foundation.framework in Frameworks */,
+				784497921592860B00F2E004 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7844977E1592860B00F2E004 = {
+			isa = PBXGroup;
+			children = (
+				784497931592860B00F2E004 /* JBSignatureControllerExample */,
+				7844978C1592860B00F2E004 /* Frameworks */,
+				7844978A1592860B00F2E004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7844978A1592860B00F2E004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				784497891592860B00F2E004 /* JBSignatureControllerExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7844978C1592860B00F2E004 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7844978D1592860B00F2E004 /* UIKit.framework */,
+				7844978F1592860B00F2E004 /* Foundation.framework */,
+				784497911592860B00F2E004 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		784497931592860B00F2E004 /* JBSignatureControllerExample */ = {
+			isa = PBXGroup;
+			children = (
+				784497C015936FDA00F2E004 /* NSFileManager+DirectoryLocations.m */,
+				784497C115936FDA00F2E004 /* NSFileManager+DirectoryLocations.h */,
+				784497B215936FCD00F2E004 /* JBSignatureView.m */,
+				784497B315936FCD00F2E004 /* JBSignatureView.h */,
+				784497B415936FCD00F2E004 /* JBSignatureController.m */,
+				784497B515936FCD00F2E004 /* JBSignatureController.h */,
+				784497B615936FCD00F2E004 /* bg-signature-portrait@2x.png */,
+				784497B715936FCD00F2E004 /* bg-signature-portrait.png */,
+				784497B815936FCD00F2E004 /* bg-signature-landscape@2x.png */,
+				784497B915936FCD00F2E004 /* bg-signature-landscape.png */,
+				7844979C1592860B00F2E004 /* JBSignatureControllerExampleAppDelegate.h */,
+				7844979D1592860B00F2E004 /* JBSignatureControllerExampleAppDelegate.m */,
+				7844979F1592860B00F2E004 /* iPhone */,
+				784497A61592860B00F2E004 /* iPad */,
+				784497941592860B00F2E004 /* Supporting Files */,
+			);
+			path = JBSignatureControllerExample;
+			sourceTree = "<group>";
+		};
+		784497941592860B00F2E004 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				784497951592860B00F2E004 /* JBSignatureControllerExample-Info.plist */,
+				784497961592860B00F2E004 /* InfoPlist.strings */,
+				784497991592860B00F2E004 /* JBSignatureControllerExample-Prefix.pch */,
+				7844979A1592860B00F2E004 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7844979F1592860B00F2E004 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				784497A01592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPhone.h */,
+				784497A11592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPhone.m */,
+				784497A31592860B00F2E004 /* MainWindow_iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		784497A61592860B00F2E004 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				784497A71592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPad.h */,
+				784497A81592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPad.m */,
+				784497AA1592860B00F2E004 /* MainWindow_iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		784497881592860B00F2E004 /* JBSignatureControllerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 784497AF1592860B00F2E004 /* Build configuration list for PBXNativeTarget "JBSignatureControllerExample" */;
+			buildPhases = (
+				784497851592860B00F2E004 /* Sources */,
+				784497861592860B00F2E004 /* Frameworks */,
+				784497871592860B00F2E004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JBSignatureControllerExample;
+			productName = JBSignatureControllerExample;
+			productReference = 784497891592860B00F2E004 /* JBSignatureControllerExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		784497801592860B00F2E004 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 784497831592860B00F2E004 /* Build configuration list for PBXProject "JBSignatureControllerExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7844977E1592860B00F2E004;
+			productRefGroup = 7844978A1592860B00F2E004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				784497881592860B00F2E004 /* JBSignatureControllerExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		784497871592860B00F2E004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784497981592860B00F2E004 /* InfoPlist.strings in Resources */,
+				784497A51592860B00F2E004 /* MainWindow_iPhone.xib in Resources */,
+				784497AC1592860B00F2E004 /* MainWindow_iPad.xib in Resources */,
+				784497BC15936FCD00F2E004 /* bg-signature-portrait@2x.png in Resources */,
+				784497BD15936FCD00F2E004 /* bg-signature-portrait.png in Resources */,
+				784497BE15936FCD00F2E004 /* bg-signature-landscape@2x.png in Resources */,
+				784497BF15936FCD00F2E004 /* bg-signature-landscape.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		784497851592860B00F2E004 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7844979B1592860B00F2E004 /* main.m in Sources */,
+				7844979E1592860B00F2E004 /* JBSignatureControllerExampleAppDelegate.m in Sources */,
+				784497A21592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPhone.m in Sources */,
+				784497A91592860B00F2E004 /* JBSignatureControllerExampleAppDelegate_iPad.m in Sources */,
+				784497BA15936FCD00F2E004 /* JBSignatureView.m in Sources */,
+				784497BB15936FCD00F2E004 /* JBSignatureController.m in Sources */,
+				784497C215936FDA00F2E004 /* NSFileManager+DirectoryLocations.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		784497961592860B00F2E004 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				784497971592860B00F2E004 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		784497A31592860B00F2E004 /* MainWindow_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				784497A41592860B00F2E004 /* en */,
+			);
+			name = MainWindow_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		784497AA1592860B00F2E004 /* MainWindow_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				784497AB1592860B00F2E004 /* en */,
+			);
+			name = MainWindow_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		784497AD1592860B00F2E004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		784497AE1592860B00F2E004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		784497B01592860B00F2E004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JBSignatureControllerExample/JBSignatureControllerExample-Prefix.pch";
+				INFOPLIST_FILE = "JBSignatureControllerExample/JBSignatureControllerExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		784497B11592860B00F2E004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JBSignatureControllerExample/JBSignatureControllerExample-Prefix.pch";
+				INFOPLIST_FILE = "JBSignatureControllerExample/JBSignatureControllerExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		784497831592860B00F2E004 /* Build configuration list for PBXProject "JBSignatureControllerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784497AD1592860B00F2E004 /* Debug */,
+				784497AE1592860B00F2E004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		784497AF1592860B00F2E004 /* Build configuration list for PBXNativeTarget "JBSignatureControllerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784497B01592860B00F2E004 /* Debug */,
+				784497B11592860B00F2E004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 784497801592860B00F2E004 /* Project object */;
+}
