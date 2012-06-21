@@ -61,7 +61,7 @@ foreColor = foreColor_;
     self = [super initWithFrame:frame];
     if (self) {
 		self.handwritingCoords = [[NSMutableArray alloc] init];
-		self.lineWidth = 5.0f;
+		self.lineWidth = 2.0f;
 		self.signatureImageMargin = 10.0f;
 		self.shouldCropSignatureImage = YES;
 		self.foreColor = [UIColor blackColor];
@@ -78,7 +78,7 @@ foreColor = foreColor_;
 }
 
 
-#pragma mark - *** Drawing ***
+#pragma mark - Drawing
 
 /**
  * Main drawing method. We keep an array of touch coordinates to represent
